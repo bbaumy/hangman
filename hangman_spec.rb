@@ -5,15 +5,13 @@ describe Hangman do
   it 'can take a predefined word' do
     g = Hangman.new "banana"
 
-    expect(g.pick_word).to eq "banana"
+    expect(g.word).to eq "banana"
   end
 
-  it 'can select a random word from a list do' do
+  it 'can select a random word from a list' do
     g = Hangman.new
 
-    g.pick_word
-
-    expect(g.pick_word).to eq
+    expect(g.words.include? g.word).to eq true
   end
 
   skip 'can take one turn'
